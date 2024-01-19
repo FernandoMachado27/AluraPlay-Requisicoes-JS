@@ -5,7 +5,7 @@ async function listaVideos() {
     return conexaoConvertida;
 }
 
-async function criaVideo(titulo, descricao, url, imagem) {
+async function criaVideo(titulo, descricao, url, imagem) { // função que possibilita inserção de novos dados na API
     const conexao = await fetch("http://localhost:3000/videos", {
         method: "POST",
         headers: {
