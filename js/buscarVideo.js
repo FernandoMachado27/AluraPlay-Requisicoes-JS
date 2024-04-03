@@ -9,7 +9,11 @@ async function buscarVideo(evento) {
 
     const lista = document.querySelector("[data-lista]");
 
-    busca.array.forEach(elemento => lista.appendChild(
+    while (lista.firstChild) {
+        lista.removeChild(lista.firstChild); // lista de item que quero pesquisar
+    }
+
+    busca.forEach(elemento => lista.appendChild(
         constoiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem))) // criou um card para cada elemento da lista
 }
 
